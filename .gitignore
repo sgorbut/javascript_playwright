@@ -4,3 +4,6 @@ node_modules/
 /playwright/.cache/
 /.idea/
 /.github/
+/test-results/
+/playwright-report/
+/playwright/.cache/
