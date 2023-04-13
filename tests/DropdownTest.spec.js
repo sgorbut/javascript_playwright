@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test.only('Dropdown menu', async ({ page }) => {
+test('Dropdown menu', async ({ page }) => {
   
     const searchInput = page.locator('[name="q"]');
     const sortButton = page.locator('.select-menu-button');
@@ -11,7 +11,7 @@ test.only('Dropdown menu', async ({ page }) => {
     await searchInput.press('Enter');    // Press Enter on input
     await page.waitForLoadState('networkidle')
     const datapickerStateText = await sortButton.allTextContents();
-    await sortButton.click;  // Click on "Sort"
+    await page.click('.select-menu-button');  // Click on "Sort"
     await page.click('.select-menu-list > [href="/search?o=desc&q=qwerty&s=forks&type=Repositories"]');   // Select another sort from dropdown
     await page.waitForLoadState('networkidle')
     const datapickerStateChangedText = await sortButton.allTextContents();
