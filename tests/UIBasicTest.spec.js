@@ -6,10 +6,11 @@ test('First test', async ({browser}) =>
     const context = await browser.newContext();
     const page = await context.newPage();
     await page.goto("https://playwright.dev/docs/intro")
+    await expect(page).toHaveTitle("Installation | Playwright");  
 
 });
 
-test.only('Second test', async ({page}) =>
+test('Second test', async ({page}) =>
 {
 
     const listOfSearchResults = page.locator('.v-align-middle em');
