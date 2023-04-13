@@ -6,7 +6,7 @@ test('First test', async ({browser}) =>
     const context = await browser.newContext();
     const page = await context.newPage();
     await page.goto("https://playwright.dev/docs/intro")
-    await expect(page).toHaveTitle("Installation | Playwright");  
+    await expect(page).toHaveTitle("Installation | Playwright");
 
 });
 
