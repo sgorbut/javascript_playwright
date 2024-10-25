@@ -14,7 +14,7 @@ test('Select item from list of items', async ({ page }) => {
     // Click on repository with Java language
     for(let i = 0; i < await elementOfList.count(); ++i)
     {
-      if (await elementOfList.nth(i).locator("[itemprop='programmingLanguage']").textContent() == programmingLanguage)
+      if (await elementOfList.nth(i).locator("[itemprop='programmingLanguage']").textContent() === programmingLanguage)
       {
         await elementOfList.nth(i).locator('.v-align-middle').click();
         break;
